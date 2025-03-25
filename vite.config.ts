@@ -28,13 +28,10 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    // Vercel expects output to be inside the "client/dist" folder
-    outDir: path.resolve(__dirname, "client", "dist"), // Build output folder
-    emptyOutDir: true, // Ensures the dist folder is clean before each build
+    outDir: path.resolve(__dirname, "client", "dist"), // The build output directory is client/dist
+    emptyOutDir: true, // Clean up dist before each build
     rollupOptions: {
-      input: path.resolve(__dirname, "client", "index.html"), // Ensure index.html is correctly included
+      input: path.resolve(__dirname, "client", "index.html"), // Ensure index.html is included in the build
     },
-    // Make sure all files go into dist/public
-    assetsDir: "public",
   },
 });
